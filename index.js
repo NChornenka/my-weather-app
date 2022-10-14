@@ -28,7 +28,7 @@
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#condition").innerHTML = response.data.weather[0].main;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   let emoji = document.querySelector("#emoji");
   if (response.data.weather[0].main === "Clouds"){
