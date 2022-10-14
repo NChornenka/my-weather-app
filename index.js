@@ -43,6 +43,10 @@
   else if (response.data.weather[0].main === "Snow"){
     emoji.innerHTML = "❄️";
   }
+  let dateElement = document.querySelector("#date-element");
+  let timeElement = document.querySelector("#time-element");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  timeElement.innerHTML = formatTime(response.data.dt * 1000);
 }
 
   function showWeather(event){
@@ -66,28 +70,25 @@ function intoCelcius(event){
   temperatureElement.innerHTML = 25;
 }
 
-function formatDate(now){
+function formatDate(timestamp){
+let current = new Date(timestamp);
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let day = days[now.getDay()];
+let day = days[current.getDay()];
 let months = ["January", "Ferbruary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-let month = months[now.getMonth()];
-let date = now.getDate();
+let month = months[current.getMonth()];
+let date = current.getDate();
 return `${day}, ${month} ${date}`;
 }
 
-function formatTime(now) {
-let hour = now.getHours();
+function formatTime(timestamp) {
+let current = new Date(timestamp);
+let hour = current.getHours();
 hour = hour <= 9 ? "0" + hour : hour;
-let minutes = now.getMinutes();
+let minutes = current.getMinutes();
 minutes = minutes <= 9 ? "0" + minutes : minutes;
 return `${hour} : ${minutes}`;
 }
 
-let dateElement = document.querySelector("#date-element");
-let timeElement = document.querySelector("#time-element");
-let now = new Date();
-dateElement.innerHTML = formatDate(now);
-timeElement.innerHTML = formatTime(now);
 
 let search = document.querySelector("#submit");
 search.addEventListener("click", showWeather);
