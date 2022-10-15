@@ -13,6 +13,7 @@ a {
     text-decoration: none;
     color: #16213E;
 }
+
 .container {
     padding: 20px;
     
@@ -38,6 +39,17 @@ a {
 
 .search {
     padding: 6px, 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+img {
+    width: 80px;
 }
 
 

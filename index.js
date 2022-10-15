@@ -30,19 +30,7 @@
   document.querySelector("#condition").innerHTML = response.data.weather[0].main;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  let emoji = document.querySelector("#emoji");
-  if (response.data.weather[0].main === "Clouds"){
-    emoji.innerHTML = "☁️";
-  }
-  else if (response.data.weather[0].main === "Rain"){
-    emoji.innerHTML = "🌧️";
-  }
-  else if (response.data.weather[0].main === "Sunny"){
-    emoji.innerHTML = "☀️";
-  }
-  else if (response.data.weather[0].main === "Snow"){
-    emoji.innerHTML = "❄️";
-  }
+  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   let dateElement = document.querySelector("#date-element");
   let timeElement = document.querySelector("#time-element");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);

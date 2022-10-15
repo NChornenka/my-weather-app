@@ -37,27 +37,23 @@
           </div>
           <div class="container conditions">
             <div class="row text-center">
-                <div class="col-4">
-                  <ul>
-                    <li>
+                <div class="col-4" class="description">
+                    <div>
                       <span id="temperature"></span>°<button class="degrees" id="celcius">C</button>|<button class="degrees" id="farenheits">F</button>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                       Feels like: <span id="feels-like"></span>°C
-                    </li>
-                  </ul>
+                    </div>
                 </div>
-                <div class="col-4">
-                  <ul>
-                    <li id="emoji">
-                      ☀️
-                    </li>
-                    <li id="condition">
+                <div class="col-4" class="description">
+                    <div id="condition">
                       
-                    </li>
-                  </ul>
+                    </div>
+                    <div>
+                      <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                    </div>
                 </div>
-              <div class="col-4">
+              <div class="col-4" class="description">
                 <ul>
                   <li>Wind: <span id="wind"></span> m/s</li>
                   <li>Humidity: <span id="humidity"></span> %</li>
