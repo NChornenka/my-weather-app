@@ -10,15 +10,20 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-     <div class="container main">
-        <div class="input-group container">
-          <input type="text" class="form-control" placeholder="Ener your City" autofocus aria-describedby="basic-addon2" id="input">
-          <div class="input-group-append">
-            <button class="btn btn-outline-primary" id="submit" type="button">Search</button>
-            <button class="btn btn-outline-primary" id="current" type="button">Current</button>
+    <div class="container main">
+          <form>
+            <div class="row">
+              <div class="col-6">
+                <input type="text" class="form-control" placeholder="Ener your City" autofocus id="input">
+              </div>
+              <div class="col-3">
+                <button class="btn btn-outline-primary w-100" id="submit" type="button">Search</button>
+              </div>
+              <div class="col-3">
+                <button class="btn btn-outline-primary w-100" id="current" type="button">Current</button>
+              </div>
           </div>
-        </div>
-        
+        </form>
           <div class="container text-center">
               <div class="row">
                 <h1 id="city">

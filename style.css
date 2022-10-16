@@ -41,12 +41,6 @@ a {
     padding: 6px, 20px;
 }
 
-.description {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-}
 
 img {
     width: 80px;
