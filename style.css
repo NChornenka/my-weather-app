@@ -34,10 +34,12 @@ a {
     border: none;
     background-color: transparent;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: default;
 }
 
-
+.degrees:hover {
+    color: #16213E;
+}
 
 .search {
     padding: 6px, 20px;
@@ -45,6 +47,7 @@ a {
 
 .active {
     color: blue;
+    cursor: pointer;
 }
 
 
