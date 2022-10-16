@@ -34,11 +34,17 @@ a {
     border: none;
     background-color: transparent;
     border-radius: 10px;
-    
+    cursor: pointer;
 }
+
+
 
 .search {
     padding: 6px, 20px;
+}
+
+.active {
+    color: blue;
 }
 
 

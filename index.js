@@ -48,12 +48,16 @@
 
   function intoFarenheits(event){
   event.preventDefault();
+    celcius.classList.add("active");
+    farenheits.classList.remove("active");
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round((celciusTemperature * 9)/5 + 32);
   }
 
 function intoCelcius(event){
   event.preventDefault();
+  farenheits.classList.add("active");
+  celcius.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
