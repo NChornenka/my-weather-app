@@ -24,8 +24,9 @@
 
   function showTemperature(response){
   // console.log(response);
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(celciusTemperature);
   document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#condition").innerHTML = response.data.weather[0].main;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
@@ -35,6 +36,8 @@
   let timeElement = document.querySelector("#time-element");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   timeElement.innerHTML = formatTime(response.data.dt * 1000);
+
+  
 }
 
   function showWeather(event){
@@ -46,16 +49,13 @@
   function intoFarenheits(event){
   event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    let temperature = temperatureElement.innerHTML;
-    temperature = Number(temperature);
-    temperatureElement.innerHTML = Math.round((temperature * 9)/5 + 32);
+    temperatureElement.innerHTML = Math.round((celciusTemperature * 9)/5 + 32);
   }
 
 function intoCelcius(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = 25;
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
 function formatDate(timestamp){
@@ -80,6 +80,8 @@ return `${hour} : ${minutes}`;
 
 let search = document.querySelector("#submit");
 search.addEventListener("click", showWeather);
+
+let celciusTemperature = null;
 
 let farenheits = document.querySelector("#farenheits");
 farenheits.addEventListener("click", intoFarenheits);
