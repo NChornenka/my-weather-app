@@ -4,10 +4,6 @@ body {
     color: #16213E;
 }
 
-button {
-    color: #16213E;
-    margin-left: 0;
-}
 
 a {
     text-decoration: none;
@@ -20,8 +16,8 @@ a {
 }
 
 .main {
-    width: 50%;
-    background: linear-gradient(91.9deg, rgb(94, 124, 121) 4.4%, rgb(64, 224, 208) 89%);
+    width: 600px;
+    background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
     border-radius: 20px;
 }
 
@@ -31,9 +27,6 @@ a {
 }
 
 .degrees {
-    border: none;
-    background-color: transparent;
-    border-radius: 10px;
     cursor: default;
 }
 
