@@ -4,21 +4,23 @@ body {
     color: #16213E;
 }
 
-
 a {
     text-decoration: none;
     color: #16213E;
 }
 
+form {
+    margin-bottom: 20px;
+}
 .container {
-    padding: 20px;
-    
+    margin: 0 auto;
 }
 
 .main {
     width: 600px;
     background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
     border-radius: 20px;
+    padding: 20px;
 }
 
 
@@ -43,11 +45,9 @@ a {
     cursor: pointer;
 }
 
-
-img {
-    width: 80px;
+.min-temperature {
+    opacity: 0.6;
 }
-
 
 @media all and (max-width: 860px) {
 
@@ -56,9 +56,5 @@ img {
     }
 }
 
-ul {
-    list-style: none;
-    padding-left: 0;
-}
 
 

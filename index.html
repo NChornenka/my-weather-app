@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>
-    <div class="container main">
+<body><div class="container">
+    <div class="main">
           <form>
             <div class="row">
               <div class="col-6">
@@ -52,88 +52,34 @@
                 </div>
                 <div class="col-4" class="description">
                     <div id="condition">
-                      
                     </div>
                     <div>
-                      <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png">
+                      <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width="70">
                     </div>
                 </div>
               <div class="col-4" class="description">
-                <ul>
-                  <li>Wind: <span id="wind"></span> m/s</li>
-                  <li>Humidity: <span id="humidity"></span> %</li>
-                </ul>
+                  <div>Wind: <span id="wind"></span> m/s</div>
+                  <div>Humidity: <span id="humidity"></span> %</div>
               </div>
             </div>
         </div>
-          <div class="container">
-            <div class="row text-center">
-              <div class="col-4">
-                <ul>
-                <li id="day-one">
-                  Day 1
-                </li>
-                <li id="day-two">
-                  Day 2
-                </li>
-                <li id="day-three">
-                  Day 3
-                </li>
-                <li id="day-four">
-                  Day 4
-                </li>
-                <li id="day-five">
-                  Day 5
-                </li>
-                </ul>
+      <div class="weather-forecast">
+        <div class="row text-center align-items-center">
+          <div class="col-4 ">
+            Day
           </div>
           <div class="col-4">
-            <ul>
-              <li>
-                ☀️
-              </li>
-              <li>
-                ☀️
-              </li>
-              <li>
-                ☀️
-              </li>
-              <li>
-                ☀️
-              </li>
-              <li>
-                ☀️
-              </li>
-            </ul>
+            <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width="60">
           </div>
           <div class="col-4">
-            <ul>
-              <li>
-                25°C
-              </li>
-              <li>
-                25°C
-              </li>
-              <li>
-                25°C
-              </li>
-              <li>
-                25°C
-              </li>
-              <li>
-                25°C
-              </li>
-            </ul>
+            <span class="max-temperature">25°</span><span class="min-temperature"> 17°</span>
           </div>
         </div>
-      </div>
-        
-        
-        
-
-<p><a href="https://github.com/NChornenka/my-weather-app" target="_blank">Open-source code </a>by Natalia</p>
-      <script src="index.js"></script>
+      </div> 
 
   </div>
+  <p><a href="https://github.com/NChornenka/my-weather-app" target="_blank">Open-source code </a>by Natalia</p>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
