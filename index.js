@@ -81,6 +81,27 @@ minutes = minutes <= 9 ? "0" + minutes : minutes;
 return `${hour} : ${minutes}`;
 }
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let forecastHTML = "";
+  days.forEach(function(day) {
+    forecastHTML = forecastHTML + `        
+    <div class="row text-center align-items-center">
+    <div class="col-4 weather-forecast-day">
+      ${day}
+    </div>
+    <div class="col-4">
+      <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width="60">
+    </div>
+    <div class="col-4">
+      <span class="max-temperature">25°</span><span class="min-temperature"> 17°</span>
+    </div>
+  </div>`;
+  })
+  forecastElement.innerHTML = forecastHTML;
+
+}
 
 let search = document.querySelector("#submit");
 search.addEventListener("click", showWeather);
@@ -97,7 +118,7 @@ let current = document.querySelector("#current");
 current.addEventListener("click", showPosition);
 
 searchCity("New York");
-
+displayForecast();
 
 
 
