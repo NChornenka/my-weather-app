@@ -23,7 +23,6 @@
   }
 
   function showTemperature(response){
-  // console.log(response);
   celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celciusTemperature);
@@ -36,11 +35,26 @@
   let timeElement = document.querySelector("#time-element");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   timeElement.innerHTML = formatTime(response.data.dt * 1000);
-
+  
+  getForecast(response.data.coord);
   
 }
+  function getForecast(coordinates){
+    let units = "metric";
+    let apiKey = "d682095eed5d0971ffeaf2a35ab9e196";
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let cnt = 7;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=${cnt}&appid=${apiKey}&units=${units}`;
 
+    // axios.get(apiUrl).then(showForecast);
+  }
+
+  function showForecast(response){
+    console.log(response)
+  }
   function showWeather(event){
+
     event.preventDefault();
     let cityName = document.querySelector("#input").value;
     searchCity(cityName);
