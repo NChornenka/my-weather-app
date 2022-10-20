@@ -43,12 +43,9 @@
     let units = "metric";
     let apiKey = "80e0f9db4e77fe70fa2t2749330ddo5a";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${name}&key=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(showForecast);
+    axios.get(apiUrl).then(displayForecast);
   }
 
-  function showForecast(response){
-    console.log(response);
-  }
   function showWeather(event){
     event.preventDefault();
     let cityName = document.querySelector("#input").value;
@@ -90,21 +87,29 @@ minutes = minutes <= 9 ? "0" + minutes : minutes;
 return `${hour} : ${minutes}`;
 }
 
-function displayForecast(){
+function formatDay(timestamp){
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+
+}
+
+function displayForecast(response){
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let forecast = response.data.daily;
   let forecastHTML = "";
-  days.forEach(function(day) {
+  forecast.forEach(function(forecastDay) {
     forecastHTML = forecastHTML + `        
     <div class="row text-center align-items-center">
     <div class="col-4 weather-forecast-day">
-      ${day}
+      ${formatDay(forecastDay.time)}
     </div>
     <div class="col-4">
-      <img id="icon" src="http://openweathermap.org/img/wn/10d@2x.png" width="60">
+      <img id="icon" src=${forecastDay.condition.icon_url} width="50">
     </div>
     <div class="col-4">
-      <span class="max-temperature">25°</span><span class="min-temperature"> 17°</span>
+      <span class="max-temperature">${Math.round(forecastDay.temperature.maximum)}°</span><span class="min-temperature"> ${Math.round(forecastDay.temperature.minimum)}°</span>
     </div>
   </div>`;
   })
@@ -127,7 +132,7 @@ let current = document.querySelector("#current");
 current.addEventListener("click", showPosition);
 
 searchCity("New York");
-displayForecast();
+
 
 
 
