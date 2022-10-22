@@ -51,8 +51,11 @@
   function showWeather(event){
     event.preventDefault();
     let cityName = document.querySelector("#input").value;
-    searchCity(cityName);
-  }
+    if (cityName === ""){
+      alert("Please enter city name")
+    }
+    searchCity(cityName); 
+    }
 
   function intoFarenheits(event){
   event.preventDefault();
@@ -67,7 +70,7 @@
     let windSpeedElement = document.querySelector("#wind");
     windSpeedElement.innerHTML = Math.round(windSpeed * 2.237);
     let windSpeedIndicatorElement = document.querySelector("#wind-speed-indicator");
-    windSpeedIndicatorElement.innerHTML = "m/h";
+    windSpeedIndicatorElement.innerHTML = "mph";
   }
 
 function intoCelcius(event){
@@ -108,7 +111,7 @@ return `${hour} : ${minutes}`;
 function formatDay(timestamp){
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return days[day];
 
 }
@@ -132,8 +135,9 @@ function displayForecast(response){
   </div>`;
   })
   forecastElement.innerHTML = forecastHTML;
-
 }
+
+
 
 let search = document.querySelector("#submit");
 search.addEventListener("click", showWeather);
