@@ -7,13 +7,11 @@ body {
 a {
     text-decoration: none;
     color: #16213E;
+    font-weight: bold;
 }
 
 form {
     margin-bottom: 20px;
-}
-.container {
-    margin: 0 auto;
 }
 
 .main {
@@ -21,6 +19,7 @@ form {
     background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
     border-radius: 20px;
     padding: 20px;
+    margin: 0 auto;
 }
 
 
@@ -41,8 +40,9 @@ form {
 }
 
 .active {
-    color: blue;
+    color: #16213E;
     cursor: pointer;
+    font-weight: normal;
 }
 
 .min-temperature {

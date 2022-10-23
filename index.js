@@ -6,7 +6,10 @@
         alert("Please enter city name")
       }
       searchCity(cityName); 
-  }
+
+      document.getElementById("input").value = null;
+      
+    }
 
 function searchCity(cityName) {
   let unit = "metric";
@@ -18,6 +21,8 @@ function searchCity(cityName) {
 
 }
 function showTemperature(response){
+  farenheits.classList.add("active");
+  celcius.classList.remove("active");
   celciusTemperature = response.data.main.temp;
   feelsLikeTemperature = response.data.main.feels_like;
   windSpeed = response.data.wind.speed;
@@ -176,10 +181,6 @@ function formatDay(timestamp){
   return days[day];
 
 }
-
-
-
-
 
 let search = document.querySelector("#submit");
 search.addEventListener("click", getCity);
