@@ -54,6 +54,14 @@ form {
     .main {
         width: 100%;
     }
+
+    .btn {
+        font-size: 12px;
+    }
+
+    .conditions {
+        font-size: 14px;
+    }
 }
 
 
