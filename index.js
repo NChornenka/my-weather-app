@@ -6,7 +6,6 @@
         alert("Please enter city name")
       }
       searchCity(cityName); 
-
       document.getElementById("input").value = null;
       
     }
@@ -18,6 +17,7 @@ function searchCity(cityName) {
   let apiUrl = `${apiEndPoint}${cityName}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showTemperature);
   axios.get(apiUrl).then(getMetricForecast);
+  document.getElementById("input").value = null;
 
 }
 function showTemperature(response){
@@ -179,15 +179,11 @@ function formatDay(timestamp){
   let day = date.getDay();
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return days[day];
-
 }
 
-let search = document.querySelector("#submit");
-search.addEventListener("click", getCity);
 
-let celciusTemperature = null;
-let feelsLikeTemperature = null;
-let windSpeed = null;
+let search = document.querySelector("#search-form");
+search.addEventListener("submit", getCity);
 
 let farenheits = document.querySelector("#farenheits");
 farenheits.addEventListener("click", intoFarenheits);
@@ -197,6 +193,10 @@ celcius.addEventListener("click", intoCelcius);
 
 let current = document.querySelector("#current");
 current.addEventListener("click", showPosition);
+
+let celciusTemperature = null;
+let feelsLikeTemperature = null;
+let windSpeed = null;
 
 searchCity("New York");
 
