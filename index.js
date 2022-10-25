@@ -3,7 +3,7 @@
       event.preventDefault();
       let cityName = document.querySelector("#input").value;
       if (cityName === ""){
-        alert("Please enter city name")
+        alert("Please enter city name");
       }
       searchCity(cityName); 
       document.getElementById("input").value = null;
@@ -36,7 +36,7 @@ function showTemperature(response){
   degreeIndicatorElement.innerHTML = "C";
   let windSpeedIndicatorElement = document.querySelector("#wind-speed-indicator");
   windSpeedIndicatorElement.innerHTML = "m/s";
-  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  document.querySelector("#icon").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   let dateElement = document.querySelector("#date-element");
   let timeElement = document.querySelector("#time-element");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
@@ -180,7 +180,6 @@ function formatDay(timestamp){
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   return days[day];
 }
-
 
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", getCity);
